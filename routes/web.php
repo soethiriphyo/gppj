@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
 
+Route::resource('categories','CategoryController');
+
+Route::resource('subcategories','SubcategoryController');
+
+Route::resource('policies','PolicyController');
+
+Route::resource('claims','ClaimController');
+
+
