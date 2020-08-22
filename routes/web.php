@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Backend
+
+Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
+
