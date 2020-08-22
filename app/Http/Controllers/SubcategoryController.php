@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Subcategory;
+use App\Category;
+
 
 class SubcategoryController extends Controller
 {
@@ -13,7 +16,9 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        return view ('backend.subcategories.index');
+        $subcategories = Subcategory::all();
+
+        return view('backend.subcategories.index',compact('subcategories'));
     }
 
     /**
@@ -23,7 +28,9 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        return view ('backend.subcategories.create');
+         $categories = Category::all();
+
+        return view('backend.subcategories.create',compact('categories'));
     }
 
     /**
@@ -34,7 +41,41 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation
+        $request->validate([
+            
+            'name'=> 'required',
+            'photo'=>'required',
+            'price'=>'required',
+            'frequency'=>'required',
+            'category'=>'required'
+            
+        ]);
+
+        // If indlude file, upload
+        $imageName = time().'.'.$request->photo->extension();
+
+        $request->photo->move(public_path('backend/subcategoryimg'),$imageName);
+
+        $myfile = 'backend/subcategoryimg/'.$imageName;
+
+        //Data insert
+        $subcategory=new Subcategory;
+        $subcategory->name=$request->name;
+        $subcategory->photo=$myfile;
+        $subcategory->price=$request->price;
+        $subcategory->frequency=$request->frequency;
+        $subcategory->category_id=$request->category;
+       
+
+
+        
+        $subcategory->save();
+
+
+
+        // Redirect
+        return redirect()->route('subcategories.index');
     }
 
     /**
@@ -45,7 +86,11 @@ class SubcategoryController extends Controller
      */
     public function show($id)
     {
-        return view ('backend.subcategories.show');
+        $subcategory = Subcategory::find($id);
+
+        
+        return view('backend.subcategories.show',compact('subcategory'));
+        
     }
 
     /**
@@ -56,7 +101,11 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-        return view ('backend.subcategories.edit');
+        $categories= Category::all();
+
+        $subcategory=Subcategory::find($id);
+
+        return view('backend.subcategories.edit',compact('categories','subcategory'));
     }
 
     /**
@@ -68,7 +117,55 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            
+            'name'=> 'required',
+            'photo'=>'sometimes',
+            
+            'price'=>'required',
+            'frequency'=>'required',
+            'category'=>'required'
+           
+
+
+        ]);
+
+        //jif include file, upload
+        if ($request->hasFile('photo')) {
+
+             $imageName = time().'.'.$request->photo->extension();
+
+            $request->photo->move(public_path('backend/subcategoryimg'),$imageName);
+
+              $myfile = 'backend/subcategoryimg/'.$imageName;
+
+
+
+              //delete old photo (unlink)
+            
+        }else{
+            $myfile =$request->oldphoto;
+        }
+
+        
+    
+
+        //data update
+        $subcategory=Subcategory::find($id);
+        
+        $subcategory->name=$request->name;
+        $subcategory->photo=$myfile;
+        $subcategory->price=$request->price;
+        $subcategory->frequency=$request->frequency;
+
+        
+        $subcategory->category_id=$request->category;
+   
+
+        $subcategory->save();
+
+        //redirect
+        return redirect()->route('subcategories.index');
     }
 
     /**
@@ -79,6 +176,9 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $subcategory =Subcategory::find($id);
+        $subcategory->delete();
+        //redirect
+        return redirect()->route('subcategories.index');
     }
 }
