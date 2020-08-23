@@ -23,7 +23,7 @@ class ClaimController extends Controller
      */
     public function create()
     {
-        return view('backend.claims.create');
+        
     }
 
     /**
@@ -56,7 +56,7 @@ class ClaimController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.claims.edit');
+        //
     }
 
     /**
