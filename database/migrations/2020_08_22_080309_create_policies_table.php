@@ -19,7 +19,7 @@ class CreatePoliciesTable extends Migration
             $table->text('photo');
             
             $table->unsignedBigInteger('subcategory_id');
-            
+            $table->unsignedBigInteger('user_id');
 
             $table->integer('duration');
             $table->timestamps();
