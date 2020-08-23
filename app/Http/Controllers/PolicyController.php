@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Policy;
+use App\Subcategory;
+use App\User;
+
+
 class PolicyController extends Controller
 {
     /**
@@ -13,7 +18,9 @@ class PolicyController extends Controller
      */
     public function index()
     {
-        return view('backend.policies.index');
+        $policies = Policy::all();
+
+        return view('backend.policies.index',compact('policies'));
     }
 
     /**
@@ -23,7 +30,7 @@ class PolicyController extends Controller
      */
     public function create()
     {
-        return view('backend.policies.create');
+        
     }
 
     /**
@@ -34,7 +41,7 @@ class PolicyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +52,9 @@ class PolicyController extends Controller
      */
     public function show($id)
     {
-        return view('backend.policies.show');
+        $policy = Policy::find($id);
+
+        return view('backend.policies.show',compact('policy'));
     }
 
     /**
@@ -56,7 +65,7 @@ class PolicyController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.policies.edit');
+        //
     }
 
     /**
@@ -79,6 +88,9 @@ class PolicyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $policy =Policy::find($id);
+        $policy->delete();
+        //redirect
+        return redirect()->route('policies.index');
     }
 }
