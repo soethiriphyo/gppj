@@ -35,7 +35,7 @@
 								<h1 class="site-title">Company Name</h1>
 								<small class="description">Taline goes here</small>
 							</div>
-						</a> <!-- #branding -->
+						</a> 
 					
 						<div class="right-section pull-right">
 							<a href="#" class="phone"><img src="{{asset('frontend/images/icon-phone.png')}}" class="icon">+1 823 424 9134</a>
