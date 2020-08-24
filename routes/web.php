@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 //frontend
 Route::get('/','FrontendController@home')->name('homepage');
+Route::get('login','FrontendController@login')->name('loginpage');
+Route::get('register','FrontendController@register')->name('registerpage');
+
 
 // Backend
 
@@ -31,3 +34,7 @@ Route::resource('claims','ClaimController');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

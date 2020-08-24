@@ -8,6 +8,8 @@ class FrontendController extends Controller
 {
      public function home($value='')
 	{
-		return view('frontendtemplate');
+		return view('frontend.home');
 	}
+
+	
 }
