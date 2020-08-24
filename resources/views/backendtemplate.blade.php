@@ -51,26 +51,31 @@
                             
                             <li class="nav-item mt-4">
                              <a class="nav-link" href="{{route('categories.index')}}">
-                             <i class="fas fa-fw fa-folder"></i>
-                                <span>Category</span></a>
+                                <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
+                             
+                                Category</a>
                             </li>
 
                             <li class="nav-item">
                              <a class="nav-link" href="{{route('subcategories.index')}}">
-                               <i class="fas fa-fw fa-folder"></i>
-                                <span>Subcategory</span></a>
+                                <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
+                             
+                                Subcategory
+                               </a>
                             </li>
 
                             <li class="nav-item">
                              <a class="nav-link" href="{{route('policies.index')}}">
-                             <i class="fas fa-fw fa-folder"></i>
-                                <span>Policy</span></a>
+                             <div class="sb-nav-link-icon"><i class="fab fa-slack"></i></div>
+                             
+                                Policy</a>
                             </li>
 
                             <li class="nav-item">
                              <a class="nav-link" href="{{route('claims.index')}}">
-                               <i class="fas fa-fw fa-folder"></i>
-                                <span>Claim</span></a>
+                               <div class="sb-nav-link-icon"><i class="fab fa-reddit"></i></div>
+                             
+                                Claim</a>
                             </li>
 
 
@@ -78,10 +83,10 @@
                             
                             
                             
-                            <a class="nav-link" href="tables.html">
+                            {{-- <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </nav>
