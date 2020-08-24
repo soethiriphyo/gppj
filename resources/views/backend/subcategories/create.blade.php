@@ -66,7 +66,7 @@
 
 				
 
-				<input type="submit" value="+ Add" class="btn btn-outline-primary">
+				<input type="submit" value="Insert" class="btn btn-primary">
 				
 			</form>			
 		</div>

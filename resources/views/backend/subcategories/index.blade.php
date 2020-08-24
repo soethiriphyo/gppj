@@ -1,9 +1,9 @@
 @extends('backendtemplate')
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid my-2">
 		<h2 class="d-inline-block">Subcategory List (Table)</h2>
-		<a href="{{route('subcategories.create')}}" class="btn btn-success float-right">+ Add Category</a>
+		<a href="{{route('subcategories.create')}}" class="btn btn-success float-right">Add New Subcategory</a>
 		<table class="table table-bordered">
 			<thead>
 				<tr>

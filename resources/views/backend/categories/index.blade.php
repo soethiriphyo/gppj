@@ -1,9 +1,9 @@
 @extends('backendtemplate')
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid my-2">
 		<h2 class="d-inline-block">Category List (Table)</h2>
-		<a href="{{route('categories.create')}}" class="btn btn-success float-right">+ Add Category</a>
+		<a href="{{route('categories.create')}}" class="btn btn-success float-right">Add New Category</a>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
