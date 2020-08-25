@@ -9,7 +9,8 @@
     <meta name="author" content="">
     <title>Home - Insurance Management System</title>
     <link rel="shortcut icon" href="{{asset('frontend/assets/images/favicon.png')}}" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/bootstrap/dist/css/bootstrap.min.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="{{asset('frontend/assets/css/icons.css')}}" rel="stylesheet" type="text/css">
@@ -54,46 +55,34 @@
                     <a class="navbar-brand" href="{{route('homepage')}}">
                         Myanmar <span>Insurance</span>
                     </a>
-                    <p>Call Us Now <b>+95987654321</b></p>
+                    
                 </div>
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{{route('homepage')}}" class="header-bar">Home</a>
-                        </li>
-                       <li>
-                            <div class="dropdown">
-                                <div class="btn dropdown-toggle header-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #344659 "><div style="color: #98acc0">Personal Insurance                              
-                                    <span class="caret"></span>
-                                </div>
-                                </div>
-                                
-                                <ul class="dropdown-menu"  style="background-color: #344659">
-                                    <div style="padding-left: 5px">
-                                    <li><a href="#">Our Story</a></li>
-                                    <li><a href="#" class="subcategory">Our Team</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    </div>
-                                </ul>
-                                
-                            </div>
+                            <a href="{{route('homepage')}}" >Home</a>
                         </li>
                         <li>
-                            <div class="dropdown">
-                                <div class="btn dropdown-toggle header-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #344659 "><div style="color: #98acc0">Commercial Insurance                              
-                                    <span class="caret"></span>
-                                </div>
-                                </div>
-                                
-                                <ul class="dropdown-menu"  style="background-color: #344659">
-                                    <div style="padding-left: 5px">
-                                    <li><a href="#">Our Story</a></li>
-                                    <li><a href="#" class="subcategory">Our Team</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    </div>
-                                </ul>
-                                
-                            </div>
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Personal Insurance
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Commercial Insurance
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="#">Our Story</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="" class="header-bar">About Us</a>

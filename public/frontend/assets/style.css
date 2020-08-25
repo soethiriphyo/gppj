@@ -1,32 +1,4 @@
-/*Register Form*/
 
-.register {
-
-	padding-top: 12em;
-	padding-bottom: 0.5em;
-}
-
-.login {
-
-	padding-bottom: 0.5em;
-	margin-top:12em;
-}
-*[role="form"] {
-    max-width: 530px;
-    padding: 15px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 0.3em;
-}
-
-*[role="form"] h2 {
-    margin-left: 5em;
-    margin-bottom: 1em;
-}
-
-.category:hover {
-    color: red;
-}
 
 
 

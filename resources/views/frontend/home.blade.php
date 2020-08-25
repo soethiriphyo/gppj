@@ -22,7 +22,7 @@
                         <div class="slide-con">
                             <b>Lifecare</b>
                             <h3>Life Insurance</h3>
-                            <p>Life insurance provides protection to the family at the premature death or gives an adequate amount at the old age when earning capacities are reduced.</p>
+                            <p>Life insurance provides protection to the family at the premature death.</p>
                             <a href="#" class="ti-arrow-right"></a>
                         </div>
                     </div>
@@ -244,119 +244,6 @@
                         <span class="ti-book"></span>
                         <h3>Understandable Terms</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="testimonials">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <h2 class="text-center">Know what people says</h2>
-                        <div class="testimonial-tab">
-                            <div class="testimonials-tab-list">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0);" data-tab="tab1"><img src="images/people-01.jpg" alt="Client" /></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" data-tab="tab2"><img src="images/people-02.jpg" alt="Client" /></a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="javascript:void(0);" data-tab="tab3"><img src="images/people-03.jpg" alt="Client" /></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" data-tab="tab4"><img src="images/people-04.jpg" alt="Client" /></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" data-tab="tab5"><img src="images/people-05.jpg" alt="Client" /></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="testimonials-tab-content">
-                                <div class="clearfix testimonial-con" id="testimonial-tab1">
-                                    <h3>John<br /><span>Developer</span></h3>
-                                    <i class="fa fa-quote-left left-quote"></i>
-                                    <p class="col-sm-offset-1 col-sm-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ante purus, aliquet ut urna id, blandit lobortis nisl. Phasellus varius velit sed placerat euismod. Duis nisi massa, pretium at luctus.</p>
-                                    <i class="fa fa-quote-right right-quote"></i>
-                                </div>
-                                <div class="clearfix testimonial-con" id="testimonial-tab2">
-                                    <h3>Roger<br /><span>Baseball Player</span></h3>
-                                    <i class="fa fa-quote-left left-quote"></i>
-                                    <p class="col-sm-offset-1 col-sm-10">Cras vitae justo eu tellus maximus rutrum. Vestibulum nibh nibh, varius nec vehicula sed, finibus in tortor. Aliquam dictum, ligula vel euismod eleifend, libero est elementum</p>
-                                    <i class="fa fa-quote-right right-quote"></i>
-                                </div>
-                                <div class="clearfix testimonial-con" id="testimonial-tab3">
-                                    <h3>Victoria<br /><span>CEO</span></h3>
-                                    <i class="fa fa-quote-left left-quote"></i>
-                                    <p class="col-sm-offset-1 col-sm-10">Vivamus faucibus magna vitae purus blandit, rutrum aliquam turpis bibendum. Ut sit amet sapien dolor. Integer eget orci id leo consectetur iaculis ut vitae neque. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                    <i class="fa fa-quote-right right-quote"></i>
-                                </div>
-                                <div class="clearfix testimonial-con" id="testimonial-tab4">
-                                    <h3>Liang<br /><span>Photographer</span></h3>
-                                    <i class="fa fa-quote-left left-quote"></i>
-                                    <p class="col-sm-offset-1 col-sm-10">Pellentesque feugiat suscipit quam, quis dignissim massa. Suspendisse potenti. Donec porta tempus ipsum id rhoncus. Aliquam hendrerit leo erat, non accumsan massa venenatis vitae.</p>
-                                    <i class="fa fa-quote-right right-quote"></i>
-                                </div>
-                                <div class="clearfix testimonial-con" id="testimonial-tab5">
-                                    <h3>Adam<br /><span>Student</span></h3>
-                                    <i class="fa fa-quote-left left-quote"></i>
-                                    <p class="col-sm-offset-1 col-sm-10">Vivamus faucibus magna vitae purus blandit, rutrum aliquam turpis bibendum. Ut sit amet sapien dolor. Integer eget orci id leo consectetur iaculis ut vitae neque.</p>
-                                    <i class="fa fa-quote-right right-quote"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="recent-news">
-            <h2 class="text-center">Recent News</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="news-sec-box">
-                            <span class="ti-pencil"></span>
-                            <h3><a href="#">Free Sound Effects for Games, Apps & UI</a></h3>
-                            <p>24 Dec 2015</p>
-                            <div class="news-by">
-                                <a href="#"><img src="{{asset('frontend/assets/images/people-03.jpg')}}" /></a>
-                                <a href="#">By Linda</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="news-sec-box">
-                            <span class="ti-image"></span>
-                            <h3><a href="#">Free Sound Effects for Games, Apps & UI</a></h3>
-                            <p>24 Dec 2015</p>
-                            <div class="news-by">
-                                <a href="#"><img src="{{asset('frontend/assets/images/people-03.jpg')}}" /></a>
-                                <a href="#">By Linda</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="news-sec-box">
-                            <span class="ti-comments"></span>
-                            <h3><a href="#">Free Sound Effects for Games, Apps & UI</a></h3>
-                            <p>24 Dec 2015</p>
-                            <div class="news-by">
-                                <a href="#"><img src="{{asset('frontend/assets/images/people-03.jpg')}}" /></a>
-                                <a href="#">By Linda</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="news-sec-box">
-                            <span class="ti-control-play"></span>
-                            <h3><a href="#">Free Sound Effects for Games, Apps & UI</a></h3>
-                            <p>24 Dec 2015</p>
-                            <div class="news-by">
-                                <a href="#"><img src="{{asset('frontend/assets/images/people-03.jpg')}}" /></a>
-                                <a href="#">By Linda</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
