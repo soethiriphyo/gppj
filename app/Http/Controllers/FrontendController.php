@@ -36,9 +36,9 @@ class FrontendController extends Controller
 		return view('frontend.health');
 	}
 
-	public function firep($value='')
+	public function fire($value='')
 	{
-		return view('frontend.firep');
+		return view('frontend.fire');
 	}
 
 	public function bike($value='')

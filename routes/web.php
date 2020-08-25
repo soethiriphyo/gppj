@@ -21,7 +21,7 @@ Route::get('about','FrontendController@about')->name('aboutpage');
 Route::get('contact','FrontendController@contact')->name('contactpage');
 Route::get('life','FrontendController@life')->name('lifepage');
 Route::get('health','FrontendController@health')->name('healthpage');
-Route::get('firep','FrontendController@firep')->name('firepage');
+Route::get('fire','FrontendController@fire')->name('firepage');
 Route::get('bike','FrontendController@bike')->name('bikepage');
 Route::get('car','FrontendController@car')->name('carpage');
 
