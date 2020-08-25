@@ -12,7 +12,7 @@
                             <b>Healthcare</b>
                             <h3>Health Insurance</h3>
                             <p>Health Insurance is a type of insurance that covers the insured's medical and surgical expenses. </p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            
                         </div>
                     </div>
                 </li>
@@ -23,7 +23,7 @@
                             <b>Lifecare</b>
                             <h3>Life Insurance</h3>
                             <p>Life insurance provides protection to the family at the premature death.</p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            
                         </div>
                     </div>
                 </li>
@@ -32,9 +32,11 @@
                     <div class="slide-info">
                         <div class="slide-con">
                             <b>Healthcare</b>
-                            <h3>Travel Insurance</h3>
-                            <p>Travel insurance would help you tackle all the travel and medical contingencies while you travel abroad.</p>
-                            <a href="#" class="ti-arrow-right"></a>
+                            <h3>Fire Insurance</h3>
+                            <p>Protect you, your home and
+                                your possessions from the destructive
+                               effects of uncontrolled fire</p>
+                            
                         </div>
                     </div>
                 </li>
