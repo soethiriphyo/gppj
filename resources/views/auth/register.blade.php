@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="register">
-    <div class="container thumbnail">        
+    <div class="container thumbnail" style="padding-top: 150px">        
             <form class="form-horizontal" role="form">
                 <h2>Registration Form</h2>
                 <div class="form-group">

@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home - Insurance Management System</title>
-    <link rel="shortcut icon" href="{{asset('frontend/assets/images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{asset('frontend/assets/image/insurancelogo.png')}}" />
     {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --}}
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/bootstrap/dist/css/bootstrap.min.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -68,9 +68,14 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" >
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{route('lifepage')}}">Life Insurance</a></li>
+
+                                <li><a href="{{route('healthpage')}}">Health Insurance</a></li>
+                                <li><a href="{{route('firepage')}}">Fire Insurance</a></li>
+
+                                <li><a href="{{route('carpage')}}">Car Insurance</a></li>
+
+                                <li><a href="{{route('bikepage')}}">Bike Insurance</a></li>
                             </ul>
                         </li>
                         <li>
@@ -79,23 +84,51 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" >
-                                <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{route('commercialpage')}}">Commercial Property Insurance</a></li>
+                                <li><a href="{{route('vehiclepage')}}">Vehicle Insurance</a></li>
+                                <li><a href="{{route('firecpage')}}">Fire Insurance</a></li>
+                                <li><a href="{{route('crimepage')}}">Crime Insurance</a></li>
+                                <li><a href="{{route('buildingpage')}}">Building Risks Insurance</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="" class="header-bar">About Us</a>
+                            <a href="{{route('aboutpage')}}" class="header-bar">About Us</a>
                         </li>
                         <li>
-                            <a href="" class="header-bar">Contact</a>
+                            <a href="{{route('contactpage')}}" class="header-bar">Contact</a>
                         </li>
-                        <li>
-                            <a href="{{ route('login') }}" class="header-bar">{{ __('Login') }}</a>
+
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                        <li>
-                            <a href="{{ route('register') }}" class="header-bar">{{ __('Register') }}</a>
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                              {{ Auth::user()->name }} <span class="caret"></span>
+                          </a>
+
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>              
+                          <a class="dropdown-item" href="{{route('profilepage')}}">Profile
+
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
+                      </div>
+                  </li>
+                  @endguest
 
                         
                     </ul>

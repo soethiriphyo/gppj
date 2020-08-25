@@ -17,6 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','FrontendController@home')->name('homepage');
 Route::get('login','FrontendController@login')->name('loginpage');
 Route::get('register','FrontendController@register')->name('registerpage');
+Route::get('about','FrontendController@about')->name('aboutpage');
+Route::get('contact','FrontendController@contact')->name('contactpage');
+Route::get('life','FrontendController@life')->name('lifepage');
+Route::get('health','FrontendController@health')->name('healthpage');
+Route::get('firep','FrontendController@firep')->name('firepage');
+Route::get('bike','FrontendController@bike')->name('bikepage');
+Route::get('car','FrontendController@car')->name('carpage');
+
+Route::get('commercial','FrontendController@commercial')->name('commercialpage');
+Route::get('vehicle','FrontendController@vehicle')->name('vehiclepage');
+Route::get('firec','FrontendController@firec')->name('firecpage');
+Route::get('crime','FrontendController@crime')->name('crimepage');
+Route::get('building','FrontendController@building')->name('buildingpage');
+
+
+
+
+
+
 
 
 // Backend

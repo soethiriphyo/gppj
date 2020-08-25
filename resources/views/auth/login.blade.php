@@ -3,7 +3,7 @@
 @section('content')
 <div class="container login thumbnail">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-4 col-sm-offset-4" style="padding-top: 150px">
       <h2>Please log in</h2>
 
       <form method="post" action="{{ url('/auth/login') }}">
