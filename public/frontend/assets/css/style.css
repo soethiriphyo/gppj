@@ -2774,6 +2774,7 @@ h3.resp-tab-active span.resp-arrow {
     .comment-post {
         display: inherit
     }
+}
 
 /*Register Form*/
 
@@ -2804,4 +2805,3 @@ h3.resp-tab-active span.resp-arrow {
         display: inherit;
         margin-left: 0
     }
-}

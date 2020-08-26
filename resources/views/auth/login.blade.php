@@ -3,11 +3,11 @@
 @section('content')
 <div class="container login thumbnail">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4" style="padding-top: 150px">
+    <div class="col-sm-4 col-sm-offset-4">
       <h2>Please log in</h2>
 
-      <form method="post" action="{{ url('/auth/login') }}">
-        {!! csrf_field() !!}
+      <form method="post" action="{{ route('login') }}">
+        @csrf
 
         <div class="form-group">
           <label for="InputEmail1">E-mail address</label>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="InputPassword1">Password</label>
           <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password" required>
         </div>
 
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
         </div>
 
         <p class="text-center">

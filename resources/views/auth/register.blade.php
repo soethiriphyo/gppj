@@ -2,34 +2,58 @@
 
 @section('content')
 <main class="register">
-    <div class="container thumbnail" style="padding-top: 150px">        
-            <form class="form-horizontal" role="form">
-                <h2>Registration Form</h2>
-                <div class="form-group">
+    <div class="container thumbnail">        
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                @csrf
+                <h2>{{ __('Register Form') }}</h2>
+                {{-- <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
                     <div class="col-sm-9">
                         <input type="file" name="user_photo" id="photo">                        
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+                    <label for="firstName" class="col-sm-3 control-label text-md-right">{{ __('Name') }}</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>                        
+                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror                       
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <label for="email" class="col-sm-3 control-label text-md-right">{{ __('E-Mail Address') }}</label>
                     <div class="col-sm-9">
-                        <input type="email" id="email" placeholder="Email" class="form-control">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label text-md-right">{{ __('Password') }}</label>
+                    <div class="col-sm-9">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <label for="password-confirm" class="col-sm-3 control-label text-md-right">{{ __('Confirm Password') }}</label>
                     <div class="col-sm-9">
-                        <input type="password" id="password" placeholder="Password" class="form-control" name="">
+                        <input iid="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                     </div>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="phone" class="col-sm-3 control-label">Phone</label>
                     <div class="col-sm-9">
                         <input type="number" id="phone" placeholder="Phone" class="form-control" name="">
@@ -69,7 +93,7 @@
                 <div class="form-group">
                         <label class="col-sm-3 control-label">Address</label>
                         <textarea class="col-sm-9" placeholder="Address" name=""></textarea>                    
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>

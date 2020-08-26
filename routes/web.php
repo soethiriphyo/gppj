@@ -39,7 +39,7 @@ Route::get('building','FrontendController@building')->name('buildingpage');
 
 
 // Backend
-
+Route::middleware('role:admin')->group(function(){
 Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
 
 
@@ -50,13 +50,11 @@ Route::resource('subcategories','SubcategoryController');
 Route::resource('policies','PolicyController');
 
 Route::resource('claims','ClaimController');
+});
 
 
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
