@@ -60,36 +60,10 @@
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{{route('homepage')}}" >Home</a>
+                            <a href="{{route('homepage')}}" >{{ __('Home') }}</a>
                         </li>
                         <li>
-                            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Personal Insurance
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="{{route('lifepage')}}">Life Insurance</a></li>
-
-                                <li><a href="{{route('healthpage')}}">Health Insurance</a></li>
-                                <li><a href="{{route('firepage')}}">Fire Insurance</a></li>
-
-                                <li><a href="{{route('carpage')}}">Car Insurance</a></li>
-
-                                <li><a href="{{route('bikepage')}}">Bike Insurance</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Commercial Insurance
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="{{route('commercialpage')}}">Commercial Property Insurance</a></li>
-                                <li><a href="{{route('vehiclepage')}}">Vehicle Insurance</a></li>
-                                <li><a href="{{route('firecpage')}}">Fire Insurance</a></li>
-                                <li><a href="{{route('crimepage')}}">Crime Insurance</a></li>
-                                <li><a href="{{route('buildingpage')}}">Building Risks Insurance</a></li>
-                            </ul>
+                            <a href="{{route('planspage')}}">{{ __('Insurance Plans') }}</a>
                         </li>
                         <li>
                             <a href="{{route('aboutpage')}}" class="header-bar">About Us</a>
@@ -144,9 +118,8 @@
     <div class="clear"></div>
     <footer>
         <div class="container">
-            <div class="row contact-sec">
-                <div class="col-md-5 col-lg-5">
-                    <h2>Insurance<span>Press</span></h2>
+            
+                    <h2>Myanmar<span>Insurance</span></h2>
                     <div class="row">
                         <div class="col-sm-6">
                             <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
@@ -159,9 +132,9 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="#" class="btn-default">Contact Us</a>
+                    <a href="{{route('contactpage')}}" class="btn-default">Contact Us</a>
                 </div>
-                <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
+                {{-- <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
                     <h2>Agent<span>Detail</span></h2>
                     <div class="row">
                         <div class="col-sm-6">
@@ -176,7 +149,7 @@
                         </div>
                     </div>
                     <a href="#" class="btn-default">Contact Agent</a>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-md-8 col-lg-8">
@@ -206,7 +179,7 @@
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-6 text-right">
                         <a href="#">Terms & Conditions</a>
-                        <a href="#">Policy</a>
+                        
                     </div>
                 </div>
             </div>

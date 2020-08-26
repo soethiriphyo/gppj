@@ -37,15 +37,7 @@
 				<div class="form-group">
 					<label>Frequency</label>
 					<input type="number" name="frequency" class="form-control">
-				</div>
-
-				
-
-				
-				
-				
-
-				
+				</div>				
 				<div class="form-group">
 					<label>Category</label>
 						<select name="category" class="form-control">
@@ -56,12 +48,14 @@
 								{{$category->name}}
 							</option>
 							@endforeach
-
-							</optgroup>
-							
-							
+							</optgroup>						
 						
 						</select>
+				</div>
+				<div class="form-group">
+					<label>Description</label>
+					<textarea class="form-control" name="description"></textarea>
+					
 				</div>
 
 				

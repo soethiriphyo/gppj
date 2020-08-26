@@ -2778,7 +2778,7 @@ h3.resp-tab-active span.resp-arrow {
 
 /*Register Form*/
 
-.register {
+.register , .policyform{
 
     padding-top: 12em;
     padding-bottom: 0.5em;

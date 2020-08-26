@@ -19,6 +19,7 @@ class CreateSubcategoriesTable extends Migration
             $table->text('photo');
             $table->string('price');
             $table->integer('frequency');
+            $table->string('description');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

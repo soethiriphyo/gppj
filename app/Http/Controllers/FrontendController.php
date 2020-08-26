@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Subcategory;
 
 class FrontendController extends Controller
 {
@@ -65,6 +66,13 @@ class FrontendController extends Controller
 	public function building($value='')
 	{
 		return view('frontend.building');
+	}
+	public function plans($value='')
+	{
+		$subcategories=Subcategory::all();
+		return view('frontend.insuranceplans',compact('subcategories')); 
+		
+
 	}
 
 	

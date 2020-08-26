@@ -65,7 +65,7 @@
                             </li>
 
                             <li class="nav-item">
-                             <a class="nav-link" href="{{route('policies.index')}}">
+                             <a class="nav-link" href="{{-- {{route('policies.index')}} --}}">
                              <div class="sb-nav-link-icon"><i class="fab fa-slack"></i></div>
                              
                                 Policy</a>

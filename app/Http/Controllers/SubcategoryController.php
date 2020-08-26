@@ -48,7 +48,8 @@ class SubcategoryController extends Controller
             'photo'=>'required',
             'price'=>'required',
             'frequency'=>'required',
-            'category'=>'required'
+            'category'=>'required',
+            // 'description'=>'required'
             
         ]);
 
@@ -66,10 +67,7 @@ class SubcategoryController extends Controller
         $subcategory->price=$request->price;
         $subcategory->frequency=$request->frequency;
         $subcategory->category_id=$request->category;
-       
-
-
-        
+        $subcategory->description=$request->description;       
         $subcategory->save();
 
 

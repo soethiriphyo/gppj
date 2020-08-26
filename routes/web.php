@@ -24,17 +24,12 @@ Route::get('health','FrontendController@health')->name('healthpage');
 Route::get('fire','FrontendController@fire')->name('firepage');
 Route::get('bike','FrontendController@bike')->name('bikepage');
 Route::get('car','FrontendController@car')->name('carpage');
-
 Route::get('commercial','FrontendController@commercial')->name('commercialpage');
 Route::get('vehicle','FrontendController@vehicle')->name('vehiclepage');
 Route::get('firec','FrontendController@firec')->name('firecpage');
 Route::get('crime','FrontendController@crime')->name('crimepage');
 Route::get('building','FrontendController@building')->name('buildingpage');
-
-
-
-
-
+Route::get('plans','FrontendController@plans')->name('planspage');
 
 
 
@@ -47,12 +42,13 @@ Route::resource('categories','CategoryController');
 
 Route::resource('subcategories','SubcategoryController');
 
-Route::resource('policies','PolicyController');
+
 
 Route::resource('claims','ClaimController');
 });
 
 
+Route::resource('policyform','PolicyformController');
 
 
 
