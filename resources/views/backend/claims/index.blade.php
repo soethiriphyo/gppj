@@ -9,13 +9,7 @@
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
-                            </div>
-                        </div>
+                        
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
@@ -26,35 +20,38 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Claim No</th>
-                                                <th>Photos</th>               
-                                                <th>Policy Name</th>
-                                                <th>Note</th>
-                                                <th>Date</th>
+                                                <th>User Name</th>
+                                                <th>Email</th>               
+                                                <th>Phone</th>
+                                                <th>Description</th>
+                                                <th>Insurance Plans</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Claim No</th>
-                                                <th>Photos</th>               
-                                                <th>Policy Name</th>
-                                                <th>Note</th>
-                                                <th>Date</th>
+                                                <th>User Name</th>
+                                                <th>Email</th>               
+                                                <th>Phone</th>
+                                                <th>Description</th>
+                                                <th>Insurance Plans</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        	{{-- @foreach ($claims as $claim) 
+                                        	@foreach ($claims as $claim) 
                                         	<tr>
-                                        		<td>{{$claim->claimno}}</td>
-                                        		<td>{{$claim->photos}}</td>
-                                        		<td>{{$claim->policy_id}}</td>
-                                        		<td>{{$claim->note}}</td>
-                                        		<td>{{$claim->claim_date}}</td>
+                                        		
+                                        		<td>{{$claim->user_id}}</td>
+                                                <td>{{$claim->email}}</td>
+                                        		<td>{{$claim->phone}}</td>
+                                        		<td>{{$claim->description}}</td>
+                                        		<td>{{$claim->subcategory_id}}</td>
                                         		<td><a href="" class="btn btn-primary">Accept</a>
                                         			<a href="" class="btn btn-danger">Cancel</a>
                                         		</td>
                                         	</tr>
-                                        	@endforeach --}}
+                                        	@endforeach
                                         </tbody>
                                     </table>
                                 </div>

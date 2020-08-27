@@ -4,7 +4,7 @@
 @endsection --}}
 @section('content')
 <div class="col-lg-9">
-	<h2>Item Page Filter By Brand and Subcategory</h2>
+	<h2>Insurance Plans Filtered by Category</h2>
 
   <div id="myItems" class="row">
 

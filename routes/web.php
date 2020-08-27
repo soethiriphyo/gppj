@@ -19,18 +19,9 @@ Route::get('login','FrontendController@login')->name('loginpage');
 Route::get('register','FrontendController@register')->name('registerpage');
 Route::get('about','FrontendController@about')->name('aboutpage');
 Route::get('contact','FrontendController@contact')->name('contactpage');
-Route::get('life','FrontendController@life')->name('lifepage');
-Route::get('health','FrontendController@health')->name('healthpage');
-Route::get('fire','FrontendController@fire')->name('firepage');
-Route::get('bike','FrontendController@bike')->name('bikepage');
-Route::get('car','FrontendController@car')->name('carpage');
-Route::get('commercial','FrontendController@commercial')->name('commercialpage');
-Route::get('vehicle','FrontendController@vehicle')->name('vehiclepage');
-Route::get('firec','FrontendController@firec')->name('firecpage');
-Route::get('crime','FrontendController@crime')->name('crimepage');
-Route::get('building','FrontendController@building')->name('buildingpage');
-Route::get('plans','FrontendController@plans')->name('planspage');
+Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
+Route::get('plans','FrontendController@plans')->name('planspage');
 
 
 // Backend
@@ -40,15 +31,14 @@ Route::get('dashboard', 'BackendController@dashboard')->name('dashboard');
 
 Route::resource('categories','CategoryController');
 
+});
 Route::resource('subcategories','SubcategoryController');
 
-
-
 Route::resource('claims','ClaimController');
-});
 
 
-Route::resource('policyform','PolicyformController');
+
+Route::resource('policies','PolicyController');
 
 
 

@@ -11,16 +11,19 @@
                 <h4 class="card-title">
                   <a href="#">{{$subcategory->name}}</a>
                 </h4>
-                <h5>{{$subcategory->price}} MMK</h5>
-                <p class="card-text">{{$subcategory->description}}</p>
+                <h5>{{$subcategory->price}} MMK</h5>                
               </div>
               <div class="card-footer">
-                <a href="{{route('policyform.create')}}" class="btn btn-info" data-id="{{$subcategory->id}}" data-name="{{$subcategory->name}}" data-price="{{$subcategory->price}}" >Buy</a>
-                <a href="{{-- {{route('detailpage',$subcategory->id)}} --}}" class="btn btn-primary">Detail</a>
+                <a href="{{route('checkoutpage')}}" class="btn btn-info buyplan" data-id="{{$subcategory->id}}" data-name="{{$subcategory->name}}" data-photo="{{asset($subcategory->photo)}}" data-price="{{$subcategory->price}}" >Buy</a>
+                <a href="{{route('subcategories.show',$subcategory->id)}}" class="btn btn-primary">Detail</a>
               </div>
             </div>
           </div>
           @endforeach     
   </div>
 </div>
+@endsection
+@section ('script')
+
+
 @endsection

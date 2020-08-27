@@ -34,12 +34,8 @@
 					</div>
 					<div class="form-group">
 						<label>Price</label>
-						<input type="number" name="price" class="form-control" value="{{$subcategory->name}}">
-					</div>
-					<div class="form-group">
-						<label>Frequency</label>
-						<input type="number" name="frequency" class="form-control" value="{{$subcategory->name}}">
-					</div>
+						<input type="number" name="price" class="form-control" value="{{$subcategory->price}}">
+					</div>					
 					
 					<div class="form-group">
 						<label>Category</label>

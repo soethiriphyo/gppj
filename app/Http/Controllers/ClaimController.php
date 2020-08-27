@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Claim;
+use App\User;
+use App\Subcategory;
+use Illuminate\Support\Facades\Auth;
 
 class ClaimController extends Controller
 {
@@ -13,7 +17,8 @@ class ClaimController extends Controller
      */
     public function index()
     {
-        return view('backend.claims.index');
+        $claims=Claim::all();
+        return view ('backend.claims.index', compact('claims'));
     }
 
     /**
@@ -23,7 +28,9 @@ class ClaimController extends Controller
      */
     public function create()
     {
-        
+        $user=User::find(Auth::id());
+        $subcategories=Subcategory::all();
+        return view ('frontend.claimform.create',compact('user','subcategories'));
     }
 
     /**
@@ -34,7 +41,23 @@ class ClaimController extends Controller
      */
     public function store(Request $request)
     {
-        
+     $request->validate([
+        'user_name'=>'required',
+        'email'=>'required',
+        'phone'=>'required',
+        'description'=>'required',
+        'subcategory'=>'required',
+        ]);
+        $claim=new Claim;
+        $claim->user_id=Auth::id();
+        $claim->email=$request->email;
+        $claim->phone=$request->phone;
+        $claim->description=$request->description;
+        $claim->subcategory_id=$request->subcategory;
+        $claim->save();
+        return 'Successfully Requested for Claim!';
+
+     
     }
 
     /**
@@ -45,7 +68,7 @@ class ClaimController extends Controller
      */
     public function show($id)
     {
-        return view('backend.claims.show');
+        //
     }
 
     /**

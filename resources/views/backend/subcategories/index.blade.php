@@ -11,8 +11,8 @@
 					
 					<th>Name</th>
 					<th>Photo</th>
-					<th>Price</th>
-					<th>Frequency</th>
+					<th>Price</th>					
+					<th>Description</th>					
 					
 					{{-- <th>Category</th> --}}
 					<th>Actions</th>
@@ -23,17 +23,14 @@
 				@php $i=1; @endphp
 				@foreach($subcategories as $subcategory)
 				<tr>
-					<td>{{$i++}}</td>
-				
+					<td>{{$i++}}</td>				
 					<td>{{$subcategory->name}}   
 						  <a href="{{route('subcategories.show',$subcategory->id)}}">
 							<span class="badge badge-primary badge-pill">Detail</span></td>
 					<td><img src="{{asset($subcategory->photo)}}" width="100" height="100"></td>
 					<td>{{$subcategory->price}}</td>
-					<td>{{$subcategory->frequency}}</td>
-					
-					<td>
-						
+					<td>{{$subcategory->description}}</td>					
+					<td>					
 
 						<a href="{{route('subcategories.edit',$subcategory->id)}}" class="btn btn-warning">Edit</a>
 

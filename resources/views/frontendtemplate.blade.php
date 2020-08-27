@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Home - Insurance Management System</title>
     <link rel="shortcut icon" href="{{asset('frontend/assets/image/insurancelogo.png')}}" />
     {{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --}}
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/ie7/ie7.css')}}">
     <!--<![endif]-->
     <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/style.css')}}">
 
 </head>
@@ -64,6 +66,9 @@
                         </li>
                         <li>
                             <a href="{{route('planspage')}}">{{ __('Insurance Plans') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{route('claims.create')}}">{{ __('Claim Assistance') }}</a>
                         </li>
                         <li>
                             <a href="{{route('aboutpage')}}" class="header-bar">About Us</a>
@@ -117,59 +122,37 @@
 
     <div class="clear"></div>
     <footer>
-        <div class="container">
+        <div class="container" style="padding-left: 100px">
             
-                    <h2>Myanmar<span>Insurance</span></h2>
+                    
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                                <br/>Zip - 382481</p>
+                            <h2>Myanmar<span>Insurance</span></h2>
+                            <p>No.(123), Bet: 70 & 71, 40 & 41 
+                                <br/>Mahar Aung Myay Township, Mandalay</p><br>
+                                <a href="{{route('contactpage')}}" class="btn-default">Contact Us</a>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="padding-left: 150px">
+                            <h2>Our<span>Social</span></h2>
+                            
                             <ul>
-                                <li><a href="#"><i class="fa fa-phone"></i> +91 123 456 7890</a></li>
-                                <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +95987654321</a></li>
+                                <li><a href="#"><i class="ti-email"></i> info@group(1)a.com</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <a href="{{route('contactpage')}}" class="btn-default">Contact Us</a>
-                </div>
-                {{-- <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
-                    <h2>Agent<span>Detail</span></h2>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                                <br/>Zip - 382481</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-phone"></i> +91 123 456 7890</a></li>
-                                <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="#" class="btn-default">Contact Agent</a>
-                </div> --}}
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-lg-8">
-                    <ul class="footer-nav">
-                        <li><a href="{{route('homepage')}}">Home</a></li>
-                        <li><a href="#">About Us</a></li>                        
-                        <li><a href="contact-us.html">Contact us</a></li>                        
-                        <li><a href="#">Products</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
-                    <ul class="footer-social">
+                            <ul class="footer-social" style="padding-top:20px">
                         <li><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="twitter.com"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="linkedin.com"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="pinterest.com"><i class="fa fa-pinterest"></i></a></li>
                     </ul>
+                        </div>
+                    </div>
+                    
                 </div>
+                 
             </div>
+            
         </div>
         <div class="copyright">
             <div class="container">
@@ -187,6 +170,7 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
@@ -194,5 +178,7 @@
     <script src="{{asset('frontend/assets/js/easyResponsiveTabs.js')}}"></script>
     <script src="{{asset('frontend/assets/js/owl.carousel.js')}}"></script>
     <script src="{{asset('frontend/assets/js/custom.js')}}"></script>
+    <script src="{{asset('frontend/js/script.js')}}"></script>
+      @yeild('script')
 </body>
 

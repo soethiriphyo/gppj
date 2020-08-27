@@ -46,23 +46,16 @@ class CategoryController extends Controller
         $request->validate([
             
             'name'=> 'required',
-            'photo'=>'required'
+            
             
         ]);
 
         // If indlude file, upload
-        $imageName = time().'.'.$request->photo->extension();
-
-        $request->photo->move(public_path('backend/categoryimg'),$imageName);
-
-        $myfile = 'backend/categoryimg/'.$imageName;
+        
 
         //Data insert
         $category=new Category;
-        $category->name=$request->name;
-        $category->photo=$myfile;
-
-        
+        $category->name=$request->name;        
         $category->save();
 
 
@@ -112,40 +105,19 @@ class CategoryController extends Controller
         $request->validate([
             
             'name'=> 'required',
-            'photo'=>'sometimes',
+            
             
 
 
         ]);
 
-        //jif include file, upload
-        if ($request->hasFile('photo')) {
-
-             $imageName = time().'.'.$request->photo->extension();
-
-            $request->photo->move(public_path('backend/categoryimg'),$imageName);
-
-              $myfile = 'backend/categoryimg/'.$imageName;
-
-
-
-              //delete old photo (unlink)
-            
-        }else{
-            $myfile =$request->oldphoto;
-        }
-
-       
-
+        
 
         //data update
         $category=Category::find($id);
 
         $category->name=$request->name;
-        $category->photo=$myfile;
-
-
-
+        
         $category->save();
 
         //redirect

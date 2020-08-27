@@ -14,20 +14,19 @@ class CreatePoliciesTable extends Migration
     public function up()
     {
         Schema::create('policies', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('photo');
-            
-            $table->unsignedBigInteger('subcategory_id');
+            $table->id();            
+            $table->string('voucherno');         
+            $table->date('orderdate');
+            $table->tinyInteger('status')->default(0);
+            $table->text('note');
+            $table->integer('total');
+            $table->integer('duration');
             $table->unsignedBigInteger('user_id');
 
-            $table->integer('duration');
+            
             $table->timestamps();
 
-            $table->foreign('subcategory_id')
-                    ->references('id')
-                    ->on('subcategories')
-                    ->onDelete('cascade');
+            
 
             $table->foreign('user_id')
                     ->references('id')

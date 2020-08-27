@@ -9,6 +9,11 @@ use App\Category;
 
 class SubcategoryController extends Controller
 {
+    public function __construt($value='')
+    {
+       $this->middleware('role:admin')->except('store');
+       $this->middleware('role:customer')->except('store');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +33,7 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-         $categories = Category::all();
+         $users = users::all();
 
         return view('backend.subcategories.create',compact('categories'));
     }
@@ -46,10 +51,9 @@ class SubcategoryController extends Controller
             
             'name'=> 'required',
             'photo'=>'required',
-            'price'=>'required',
-            'frequency'=>'required',
+            'price'=>'required',            
             'category'=>'required',
-            // 'description'=>'required'
+            'description'=>'required'
             
         ]);
 
@@ -64,8 +68,7 @@ class SubcategoryController extends Controller
         $subcategory=new Subcategory;
         $subcategory->name=$request->name;
         $subcategory->photo=$myfile;
-        $subcategory->price=$request->price;
-        $subcategory->frequency=$request->frequency;
+        $subcategory->price=$request->price;       
         $subcategory->category_id=$request->category;
         $subcategory->description=$request->description;       
         $subcategory->save();

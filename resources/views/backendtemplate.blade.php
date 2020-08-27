@@ -29,10 +29,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                        </form>            
+                        
                     </div>
                 </li>
             </ul>
@@ -65,7 +70,7 @@
                             </li>
 
                             <li class="nav-item">
-                             <a class="nav-link" href="{{-- {{route('policies.index')}} --}}">
+                             <a class="nav-link" href="{{route('policies.index')}}">
                              <div class="sb-nav-link-icon"><i class="fab fa-slack"></i></div>
                              
                                 Policy</a>

@@ -22,51 +22,12 @@ class FrontendController extends Controller
 		return view('frontend.contact');
 	}
 
-	public function car($value='')
+	public function checkout($value='')
 	{
-		return view('frontend.car');
+		return view('frontend.checkout');
 	}
 
-	public function life($value='')
-	{
-		return view('frontend.life');
-	}
-
-	public function health($value='')
-	{
-		return view('frontend.health');
-	}
-
-	public function fire($value='')
-	{
-		return view('frontend.fire');
-	}
-
-	public function bike($value='')
-	{
-		return view('frontend.bike');
-	}
-
-	public function commercial($value='')
-	{
-		return view('frontend.commercial');
-	}
-	public function vehicle($value='')
-	{
-		return view('frontend.vehicle');
-	}
-	public function firec($value='')
-	{
-		return view('frontend.firec');
-	}
-	public function crime($value='')
-	{
-		return view('frontend.crime');
-	}
-	public function building($value='')
-	{
-		return view('frontend.building');
-	}
+	
 	public function plans($value='')
 	{
 		$subcategories=Subcategory::all();

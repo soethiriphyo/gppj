@@ -99,6 +99,7 @@
                         <input type="file" name="user_photo" id="photo" multiple>                        
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <div class="col-sm-3 col-sm-offset-3">
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>

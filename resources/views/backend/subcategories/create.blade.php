@@ -34,10 +34,7 @@
 					<input type="number" name="price" class="form-control">
 				</div>
 
-				<div class="form-group">
-					<label>Frequency</label>
-					<input type="number" name="frequency" class="form-control">
-				</div>				
+								
 				<div class="form-group">
 					<label>Category</label>
 						<select name="category" class="form-control">

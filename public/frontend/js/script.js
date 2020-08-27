@@ -1,13 +1,15 @@
-$(document).ready(function(){
+	$(document).ready(function(){
 
 	getData();
-	count();
+	// count();
 
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
+
 
 	$('.row').on('click','.view_detail',function(){
 		var id = $(this).data('id');
@@ -20,6 +22,7 @@ $.ajaxSetup({
 		var description = $(this).data('description');
 
 		$(".pimg").attr('src',"backend/"+photo);
+		$(".pname").html("Item Name: "+name);
 		$(".pprice").html("Item Price: "+price);
 		$(".pbrand").html("Item Brand: "+brand);
 		$(".psubcategory").html("Item Category: "+subcategory);
@@ -32,113 +35,94 @@ $.ajaxSetup({
 
 	// Count
 	function count(){
-		var shopString = localStorage.getItem("heinshop");
+		var shopString = localStorage.getItem("onlineshop");
 		if (shopString) {
 			var shopArray = JSON.parse(shopString);
 			if (shopArray!=0) {
 				var count=shopArray.length;
-				$("#item_count").text('('+count+')');
+				$("#item_count").text('['+count+']');
 			}else {
-				$("#item_count").text('()');	
+				$("#item_count").text('[]');	
 			}
 
 		}else {
-			$("#item_count").text('()');	
+				$("#item_count").text('[]');
 		}
 	};
 
 
 	// Add To Cart
-	$(".cart").on('click',function(){
-		var item_qty=parseInt($('#qty').val());
+
+	$(".buyplan").on('click',function(){
+		
+		var item_dur=parseInt($('#duration').val());
 		var id = $(this).data('id');
 		var name = $(this).data('name');
 		var photo = $(this).data('photo');
 		var price = $(this).data('price');
-		var discount = $(this).data('discount');
-		var qty=1;
-		if (item_qty) {
-			qty+=--item_qty;
+			
+		var duration=1;
+		if (item_dur) {
+			duration+=--item_dur;
 		}
 
-		var shop_item = {
+		var policy = {
 			id:id,
 			name:name,
-			price:price,
-			discount:discount,
+			price:price,			
 			photo:photo,
-			qty:qty
+			duration:duration
 		}
 
-		var shopString = localStorage.getItem("heinshop");
-		var shopArray;
-		if (shopString==null) {
-			shopArray=Array();
+		var policyString = localStorage.getItem("insurance");
+		var policyArray;
+		if (policyString==null) {
+			policyArray=Array();
 		}else {
-			shopArray=JSON.parse(shopString);
+			policyArray=JSON.parse(policyString);
 		}
 
-		var status = false;
-		$.each(shopArray,function(i,v){
-			if (id==v.id) {
-				status = true;
-				if (!item_qty) {
-					v.qty++;
-				}else{
-					v.qty+=item_qty;
-				}
-			}
-		})
+		
+			policyArray.push(policy);
 
-		if (status==false) {
-			shopArray.push(shop_item);
-
-		}
-
-		var shopData = JSON.stringify(shopArray);
-		localStorage.setItem("heinshop", shopData);
-		count();
-
+		var policyData = JSON.stringify(policyArray);
+		localStorage.setItem("insurance", policyData);
+		
+		
 	});
 
 	// Show to Table Data
 	function getData(){
-		var shopString = localStorage.getItem("heinshop");
-		if (shopString) {
-			var shopArray = JSON.parse(shopString);
+		var policyString = localStorage.getItem("insurance");
+		if (policyString) {
+			var policyArray = JSON.parse(policyString);
 
 			var html='';
 			var no=1;
 			var total=0;
-			$.each(shopArray,function(i,v){
+			$.each(policyArray,function(i,v){
+				console.log(v);
 				var name = v.name;
 				var photo=v.photo;
-				var unit_price = v.price;
-				var discount = v.discount;
-				var qty = v.qty;
-				if (discount) {
-					var price_show=discount+'<del class="d-block">'+unit_price+'</del>';
-					var price = discount;
-				}else{
-					var price_show = unit_price;
-					var price = unit_price;
-				}
+				var unit_price = v.price;				
+				var duration = v.duration;				
+				var price_show = unit_price;
+				var price = unit_price;
+				
 
 				html += `<tr>
 						<td>${no++}</td>
-						<td><img src="${photo}" width="100" height="80"></td>
 						<td>${name}</td>
+						<td class="w-25"><img src="${photo}" class="checkout_img"></td>
 						<td>${price_show}</td>
-						<td><button class="btn btn-light btn-sm min" data-item_i="${i}">-</button> ${qty} <button class="btn btn-light btn-sm max" data-item_i="${i}">+</button></td>
-						<td>${price*qty}</td>
-
+						<td><button class="btn btn-light btn-sm min" data-item_i="${i}"><i class="fa fa-caret-down" aria-hidden="true"></i></button> ${duration} <button class="btn btn-light btn-sm max" data-item_i="${i}"><i class="fa fa-caret-up" aria-hidden="true"></i></button></td>
+						<td>${price*duration}</td>
 					</tr>`;	
-
-					total += price*qty;
+					total += price*duration;
 			});
 
 			html+=`<tr>
-				<td colspan="4">Total</td>
+				<td colspan="5">Total</td>
 				<td>${total}</td>
 				</tr>`
 
@@ -158,22 +142,22 @@ $.ajaxSetup({
 
 		var item_i = $(this).data('item_i');
 
-		var shopString = localStorage.getItem("heinshop");
-		if (shopString) {
+		var policyString = localStorage.getItem("insurance");
+		if (policyString) {
 
-			var shopArray = JSON.parse(shopString);
+			var policyArray = JSON.parse(policyString);
 
-			$.each(shopArray,function(i,v){
+			$.each(policyArray,function(i,v){
 				if (item_i==i) {
-					v.qty++;
+					v.duration++;
 				}
 
 			})
 
-			var shopData=JSON.stringify(shopArray);
-			localStorage.setItem("heinshop",shopData);
+			var policyData=JSON.stringify(policyArray);
+			localStorage.setItem("insurance",policyData);
 			getData();
-			count();
+			// count();
 
 		}
 
@@ -182,55 +166,52 @@ $.ajaxSetup({
 	$("tbody").on('click','.min',function(){
 		var item_i = $(this).data('item_i');
 
-		var shopString = localStorage.getItem("heinshop");
-		if (shopString) {
+		var policyString = localStorage.getItem("insurance");
+		if (policyString) {
 
-			var shopArray = JSON.parse(shopString);
+			var policyArray = JSON.parse(policyString);
 
-			$.each(shopArray,function(i,v){
+			$.each(policyArray,function(i,v){
 				if (item_i==i) {
-					v.qty--;
-					if (v.qty==0) {
-						shopArray.splice(item_i,1);
+					v.duration--;
+					if (v.duration==0) {
+						policyArray.splice(item_i,1);
 					}
 				}
 
 			})
 
-			var shopData=JSON.stringify(shopArray);
-			localStorage.setItem("heinshop",shopData);
+			var policyData=JSON.stringify(policyArray);
+			localStorage.setItem("insurance",policyData);
 			getData();
-			count();
+			// count();
 
 		}
 
 	})
+// For Buy Now
 
-	//For But Now
+$('.purchase').on('click',function(){
+	// alert("LoL");
+	var notes=$('.notes').val();
+	// var total=$('.total').val();
+	// alert(notes);
+	var policyString=localStorage.getItem("insurance");
 
-	$('.buy_now').on('click',function(){
-		var notes=$('.notes').val();
-		// var total=$('.total').val();
+	if (policyString) {
+		// var policyArray=JSON.parse(policyString);
 
-
-		// alert("LoL");
-		var shopString=localStorage.getItem("heinshop");
-		if (shopString) {
-			// var shopArray=JSON.parse(shopString);
-			$.post('/orders',{shop_data:shopString,notes:notes},function(response){
-				// console.log(response);
-				if (response) {
-
-					alert(response);
-					localStorage.clear();
-					getData();
-					location.href="/";
-
-				}
-			})
-		}
-	})
-
-
+		$.post('/policies',{policy_arr:policyString,notes:notes},function(response){
+			// console.log(response); //AJAX
+			if (response) {
+				alert(response);
+				localStorage.clear();
+				getData();
+				location.href="/";
+			}
+		});
+	}
+})
 
 })
+

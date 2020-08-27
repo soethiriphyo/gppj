@@ -25,18 +25,7 @@
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" name="name" class="form-control" value="{{$category->name}}">
-					</div>
-					<div class="form-group">
-						<label>Photo</label>
-
-						<input type="file" name="photo" class="form-control-file">
-						<img src="{{asset($category->photo)}}" class="img-fluid w-25 mt-2">
-						<input type="hidden" name="oldphoto" value="{{asset($category->photo)}}">
-					</div>
-										
-					
-
-					
+					</div>						
 
 					<input type="submit" value="Update" class="btn btn-primary">
 

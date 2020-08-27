@@ -44,57 +44,30 @@
         </section>
         <div class="container">
             <div class="row">
-                <section class="col-sm-7 col-md-8 col-lg-8">
+                <section class=" col-lg-12">
                     <div class="intro">
-                        <h2>Welcome to Insurance press</h2>
-                        <p>Life is filled up with excitement. But at the same time it is full of risks. Some uncertainties and unexpected events can really put you down.General Insurance or Non-life Insurance helps you to safeguard yourself and the things around, which you value a lot. These may include your home, car and other valuables like money lending, professional casualties other than death, etc.</p>
-                        <ul class="row">
+                        <h2 style="text-align: center;">Welcome to Myanmar Insurance</h2>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Life is filled up with excitement. But at the same time it is full of risks. Some uncertainties and unexpected events can really put you down.General Insurance or Non-life Insurance helps you to safeguard yourself and the things around, which you value a lot. Myanmar Insurance deals the adding new insurance schemes and managing the clients for the insurance. It has complete access for the crud operations that are to create, read, update and delete the database entries. At first you need to add a branch and the staff members for the branch then secondly add a user to the database now you can add an insurance scheme and finally make the payments for the client to the added insurance. These may include your home, car and other valuables like money lending, professional casualties other than death, etc.</p>
+                        <ul class="row" style="text-align: center;">
                             <li class="col-sm-4">
-                                <i class="fa fa-life-ring"></i>
+                                <i class="fa fa-life-ring text-center"></i>
                                 <h3>27x7 Support</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                {{-- <p>Lorem ipsum dolor sit amet, consectetur.</p> --}}
                             </li>
                             <li class="col-sm-4">
                                 <i class="ti-marker-alt"></i>
                                 <h3>Easy Claim system</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                {{-- <p>Lorem ipsum dolor sit amet, consectetur.</p> --}}
                             </li>
                             <li class="col-sm-4">
                                 <i class="ti-email"></i>
                                 <h3>Get Started with us</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                                {{-- <p>Lorem ipsum dolor sit amet, consectetur.</p> --}}
                             </li>
                         </ul>
                     </div>
                 </section>
-                <section class="col-sm-5 col-md-4 col-lg-4">
-                    <div class="get-quote-form">
-                        <h2>Get a free quote form</h2>
-                        <form id="get-quote">
-                            <div>
-                                <input type="text" name="name" placeholder="Your Name" />
-                            </div>
-                            <div>
-                                <input type="text" name="email" placeholder="Email" />
-                            </div>
-                            <div>
-                                <input type="text" name="ph-no" placeholder="Phone no" />
-                            </div>
-                            <div class="form-select">
-                                <span></span>
-                                <select>
-                                    <option>Product</option>
-                                </select>
-                            </div>
-                            <div>
-                                <textarea rows="1" cols="1" placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn-default" value="Get Free Quote" />
-                            </div>
-                        </form>
-                    </div>
-                </section>
+                
             </div>
         </div>
         <section class="product-tab">
@@ -210,42 +183,42 @@
                     <div class="col-sm-3 services-dtl">
                         <span class="fa fa-life-bouy"></span>
                         <h3>24x7 Support</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-pencil"></span>
                         <h3>Easy Claim System</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-email"></span>
                         <h3>Get Started With us</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="fa fa-money"></span>
                         <h3>Easy Installments</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-wallet"></span>
                         <h3>Lorem Ipsum</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="fa fa-laptop"></span>
                         <h3>Online Account</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-lock"></span>
                         <h3>Strongly Secure</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                     <div class="col-sm-3 services-dtl">
                         <span class="ti-book"></span>
                         <h3>Understandable Terms</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur</p> --}}
                     </div>
                 </div>
             </div>

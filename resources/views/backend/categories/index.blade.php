@@ -9,8 +9,7 @@
 				<tr>
 					<th>NO</th>
 					
-					<th>Name</th>
-					<th>Photo</th>
+					<th>Name</th>					
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -21,10 +20,7 @@
 				<tr>
 					<td>{{$i++}}</td>
 				
-					<td>{{$category->name}}</td>
-
-					<td><img src="{{asset($category->photo)}}" width="100" height="100"></td>
-					<!-- <td>5500 MMK</td> -->
+					<td>{{$category->name}}</td>					
 
 					<td>
 						<a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">Edit</a>

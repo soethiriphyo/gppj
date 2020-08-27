@@ -24,15 +24,6 @@
 						<label>Name</label>
 						<input type="text" name="name" class="form-control">
 					</div>
-					<div class="form-group">
-						<label>Photo</label>
-						<input type="file" name="photo" class="form-control-file">
-					</div>
-
-
-
-
-
 
 					<input type="submit" value="Insert" class="btn btn-primary">
 
